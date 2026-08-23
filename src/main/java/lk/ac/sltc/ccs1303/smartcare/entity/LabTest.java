@@ -25,6 +25,9 @@ public class LabTest {
     @Column(name = "Test_Result")
     private String testResult;
     
+    @Column(name = "Test_Fee")
+    private Double testFee;
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Ap_Id", nullable = false)
     private Appointment appointment;
@@ -35,16 +38,16 @@ public class LabTest {
     public LabTest() {
     }
     
-    public LabTest(Long id, String testName, LocalDate date, String status, String techName, String testResult, Appointment appointment) {
+    public LabTest(Long id, String testName, LocalDate date, String status, String techName, String testResult, Double testFee, Appointment appointment) {
         this.id = id;
         this.testName = testName;
         this.date = date;
         this.status = status;
         this.techName = techName;
         this.testResult = testResult;
+        this.testFee = testFee;
         this.appointment = appointment;
     }
-    
     
     // Getters and Setters
     
@@ -102,5 +105,13 @@ public class LabTest {
     
     public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
+    }
+    
+    public Double getTestFee() {
+        return testFee;
+    }
+    
+    public void setTestFee(Double testFee) {
+        this.testFee = testFee;
     }
 }

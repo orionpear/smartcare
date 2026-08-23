@@ -8,8 +8,11 @@ import java.util.Objects;
 @Entity
 public class DepartmentHead {
     @Id
+    @Column(name = "Dep_Id")
+    private Long id;
+    
     @OneToOne
-    @MapsId // Tells this class not to generate its own id
+    @MapsId // Tells Hibernate to derive this entity's PK from Department's id
     @JoinColumn(name = "Dep_Id")
     private Department department;
     
