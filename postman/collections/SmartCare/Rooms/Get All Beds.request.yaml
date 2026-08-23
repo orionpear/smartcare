@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get All Beds
+method: GET
+url: '{{baseUrl}}/api/rooms/beds'
+order: 7000

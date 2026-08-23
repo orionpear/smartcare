@@ -1,0 +1,18 @@
+$kind: http-request
+name: Add Patient
+method: POST
+url: '{{baseUrl}}/api/patients'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "address": "123 Main St",
+      "blood": "A+",
+      "dob": "1990-01-15"
+    }

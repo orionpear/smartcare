@@ -1,0 +1,16 @@
+$kind: http-request
+name: Add Doctor
+method: POST
+url: '{{baseUrl}}/api/doctors'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Dr. Jane Smith",
+      "consultFee": 1500.00,
+      "departmentId": 1
+    }

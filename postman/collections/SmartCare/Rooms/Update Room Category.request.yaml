@@ -1,0 +1,15 @@
+$kind: http-request
+name: Update Room Category
+method: PUT
+url: '{{baseUrl}}/api/rooms/categories/{{roomCategoryId}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "category": "General Ward",
+      "charge": 2500.00
+    }

@@ -1,0 +1,18 @@
+$kind: http-request
+name: Book Appointment
+method: POST
+url: '{{baseUrl}}/api/appointments'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "doctorId": 1,
+      "patientId": 1,
+      "date": "2024-12-01",
+      "time": "09:00:00",
+      "consultRoom": "Room 101"
+    }

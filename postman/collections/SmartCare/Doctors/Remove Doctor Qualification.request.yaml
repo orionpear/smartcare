@@ -1,0 +1,5 @@
+$kind: http-request
+name: Remove Doctor Qualification
+method: DELETE
+url: '{{baseUrl}}/api/doctors/{{doctorId}}/qualifications/MBBS'
+order: 13000

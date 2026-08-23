@@ -1,0 +1,17 @@
+$kind: http-request
+name: Update Treatment
+method: PUT
+url: '{{baseUrl}}/api/treatments/{{treatmentId}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "diagnosis": "Hypertension Stage 2",
+      "prescriptionDetails": "Amlodipine 10mg daily",
+      "treatmentNotes": "Follow up in 2 weeks",
+      "treatFee": 600.00
+    }

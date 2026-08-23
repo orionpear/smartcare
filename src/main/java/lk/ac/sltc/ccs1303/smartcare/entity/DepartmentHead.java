@@ -17,7 +17,7 @@ public class DepartmentHead {
     private Department department;
     
     @OneToOne
-    @JoinColumn(name = "Doc_Id", nullable = false)
+    @JoinColumn(name = "Head_Doc_Id", nullable = false)
     private Doctor doctor;
     
     @Column(name = "Start_Date")

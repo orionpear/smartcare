@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Department Head
+method: GET
+url: '{{baseUrl}}/api/departments/{{departmentId}}/head'
+order: 8000

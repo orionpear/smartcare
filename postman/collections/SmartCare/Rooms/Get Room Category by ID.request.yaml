@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Room Category by ID
+method: GET
+url: '{{baseUrl}}/api/rooms/categories/{{roomCategoryId}}'
+order: 3000

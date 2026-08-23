@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Patient Medical History
+method: GET
+url: '{{baseUrl}}/api/treatments/patient/{{patientId}}/history'
+order: 6000

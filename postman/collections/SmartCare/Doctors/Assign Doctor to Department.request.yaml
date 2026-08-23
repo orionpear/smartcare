@@ -1,0 +1,14 @@
+$kind: http-request
+name: Assign Doctor to Department
+method: PUT
+url: '{{baseUrl}}/api/doctors/{{doctorId}}/department'
+order: 7000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "departmentId": 2
+    }

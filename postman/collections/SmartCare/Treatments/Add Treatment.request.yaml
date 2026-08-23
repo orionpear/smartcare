@@ -1,0 +1,19 @@
+$kind: http-request
+name: Add Treatment
+method: POST
+url: '{{baseUrl}}/api/treatments'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "appointmentId": 1,
+      "date": "2024-12-01",
+      "diagnosis": "Hypertension",
+      "prescriptionDetails": "Amlodipine 5mg daily",
+      "treatmentNotes": "Monitor BP weekly",
+      "treatFee": 500.00
+    }

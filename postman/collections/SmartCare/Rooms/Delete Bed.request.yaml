@@ -1,0 +1,5 @@
+$kind: http-request
+name: Delete Bed
+method: DELETE
+url: '{{baseUrl}}/api/rooms/beds/{{roomId}}/{{bedNum}}'
+order: 9000

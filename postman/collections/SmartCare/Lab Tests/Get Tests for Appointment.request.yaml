@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Tests for Appointment
+method: GET
+url: '{{baseUrl}}/api/lab-tests/appointment/{{appointmentId}}'
+order: 6000

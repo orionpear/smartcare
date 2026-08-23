@@ -1,0 +1,14 @@
+$kind: http-request
+name: Add Patient Contact
+method: POST
+url: '{{baseUrl}}/api/patients/{{patientId}}/contacts'
+order: 7000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "contact": "+94771234567"
+    }

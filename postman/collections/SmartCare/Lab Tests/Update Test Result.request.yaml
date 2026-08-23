@@ -1,0 +1,14 @@
+$kind: http-request
+name: Update Test Result
+method: PATCH
+url: '{{baseUrl}}/api/lab-tests/{{labTestId}}/result'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "testResult": "WBC: 7.5, RBC: 4.8, Hemoglobin: 14.2"
+    }

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Treatments for Appointment
+method: GET
+url: '{{baseUrl}}/api/treatments/appointment/{{appointmentId}}'
+order: 5000

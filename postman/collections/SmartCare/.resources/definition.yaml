@@ -1,0 +1,28 @@
+$kind: collection
+name: SmartCare API
+description: Hospital Management System API for SmartCare
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8080'
+  - key: patientId
+    value: '1'
+  - key: doctorId
+    value: '1'
+  - key: departmentId
+    value: '1'
+  - key: appointmentId
+    value: '1'
+  - key: admissionId
+    value: '1'
+  - key: treatmentId
+    value: '1'
+  - key: labTestId
+    value: '1'
+  - key: billId
+    value: '1'
+  - key: roomCategoryId
+    value: '1'
+  - key: roomId
+    value: '1'
+  - key: bedNum
+    value: '1'

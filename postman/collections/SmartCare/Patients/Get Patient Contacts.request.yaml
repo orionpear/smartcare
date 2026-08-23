@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Patient Contacts
+method: GET
+url: '{{baseUrl}}/api/patients/{{patientId}}/contacts'
+order: 8000

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Remove Patient Contact
+method: DELETE
+url: '{{baseUrl}}/api/patients/{{patientId}}/contacts/+94771234567'
+order: 9000

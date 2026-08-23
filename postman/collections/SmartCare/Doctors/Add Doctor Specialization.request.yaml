@@ -1,0 +1,14 @@
+$kind: http-request
+name: Add Doctor Specialization
+method: POST
+url: '{{baseUrl}}/api/doctors/{{doctorId}}/specializations'
+order: 14000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "specialization": "Cardiology"
+    }

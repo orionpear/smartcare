@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Available Beds
+method: GET
+url: '{{baseUrl}}/api/rooms/beds/available'
+order: 8000

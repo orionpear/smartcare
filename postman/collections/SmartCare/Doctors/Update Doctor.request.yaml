@@ -1,0 +1,15 @@
+$kind: http-request
+name: Update Doctor
+method: PUT
+url: '{{baseUrl}}/api/doctors/{{doctorId}}'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Dr. Jane Smith",
+      "consultFee": 2000.00
+    }

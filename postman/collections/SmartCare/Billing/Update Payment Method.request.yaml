@@ -1,0 +1,14 @@
+$kind: http-request
+name: Update Payment Method
+method: PATCH
+url: '{{baseUrl}}/api/bills/{{billId}}/payment-method'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "paymentMethod": "CARD"
+    }

@@ -1,0 +1,8 @@
+$kind: http-request
+name: Search Doctors
+method: GET
+url: '{{baseUrl}}/api/doctors/search'
+order: 4000
+queryParams:
+  - key: name
+    value: Smith

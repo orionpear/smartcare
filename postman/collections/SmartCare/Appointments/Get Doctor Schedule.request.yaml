@@ -1,0 +1,8 @@
+$kind: http-request
+name: Get Doctor Schedule
+method: GET
+url: '{{baseUrl}}/api/appointments/doctor/{{doctorId}}/schedule'
+order: 6000
+queryParams:
+  - key: date
+    value: '2024-12-01'

@@ -1,0 +1,14 @@
+$kind: http-request
+name: Discharge Patient
+method: PATCH
+url: '{{baseUrl}}/api/admissions/{{admissionId}}/discharge'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "dischargeDate": "2024-12-10"
+    }

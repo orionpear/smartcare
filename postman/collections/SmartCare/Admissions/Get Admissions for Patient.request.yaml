@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Admissions for Patient
+method: GET
+url: '{{baseUrl}}/api/admissions/patient/{{patientId}}'
+order: 6000

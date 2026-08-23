@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Doctor Contacts
+method: GET
+url: '{{baseUrl}}/api/doctors/{{doctorId}}/contacts'
+order: 9000

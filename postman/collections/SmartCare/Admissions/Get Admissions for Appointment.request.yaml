@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Admissions for Appointment
+method: GET
+url: '{{baseUrl}}/api/admissions/appointment/{{appointmentId}}'
+order: 7000

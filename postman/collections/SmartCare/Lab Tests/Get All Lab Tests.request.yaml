@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get All Lab Tests
+method: GET
+url: '{{baseUrl}}/api/lab-tests'
+order: 2000

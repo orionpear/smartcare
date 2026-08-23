@@ -1,0 +1,18 @@
+$kind: http-request
+name: Add Lab Test
+method: POST
+url: '{{baseUrl}}/api/lab-tests'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "appointmentId": 1,
+      "testName": "Complete Blood Count",
+      "date": "2024-12-01",
+      "techName": "Tech. Perera",
+      "testFee": 800.00
+    }

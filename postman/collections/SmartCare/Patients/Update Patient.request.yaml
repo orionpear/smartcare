@@ -1,0 +1,18 @@
+$kind: http-request
+name: Update Patient
+method: PUT
+url: '{{baseUrl}}/api/patients/{{patientId}}'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "address": "456 New St",
+      "blood": "A+",
+      "dob": "1990-01-15"
+    }

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Remove Doctor Specialization
+method: DELETE
+url: '{{baseUrl}}/api/doctors/{{doctorId}}/specializations/Cardiology'
+order: 16000

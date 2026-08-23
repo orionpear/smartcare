@@ -1,0 +1,15 @@
+$kind: http-request
+name: Update Department Head
+method: PUT
+url: '{{baseUrl}}/api/departments/{{departmentId}}/head'
+order: 7000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "doctorId": 2,
+      "startDate": "2024-06-01"
+    }
