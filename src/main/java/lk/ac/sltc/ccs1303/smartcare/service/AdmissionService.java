@@ -3,7 +3,6 @@ package lk.ac.sltc.ccs1303.smartcare.service;
 import lk.ac.sltc.ccs1303.smartcare.entity.*;
 import lk.ac.sltc.ccs1303.smartcare.exception.ResourceNotFoundException;
 import lk.ac.sltc.ccs1303.smartcare.repository.AdmissionRepository;
-import lk.ac.sltc.ccs1303.smartcare.repository.BedRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -17,18 +16,18 @@ public class AdmissionService {
     private static final String DISCHARGED_STATUS = "Discharged";
     
     private final AdmissionRepository admissionRepository;
-    private final BedRepository bedRepository;
+    private final RoomService roomService;
     private final AppointmentService appointmentService;
     private final PatientService patientService;
     
     // Constructors
     
     public AdmissionService(AdmissionRepository admissionRepository,
-                            BedRepository bedRepository,
+                            RoomService roomService,
                             AppointmentService appointmentService,
                             PatientService patientService) {
         this.admissionRepository = admissionRepository;
-        this.bedRepository = bedRepository;
+        this.roomService = roomService;
         this.appointmentService = appointmentService;
         this.patientService = patientService;
     }
@@ -38,7 +37,7 @@ public class AdmissionService {
     // Admit
     public Admission admitPatient(Long appointmentId, Long roomId, Long bedNum, LocalDate admissionDate) {
         Appointment appointment = appointmentService.getById(appointmentId);
-        Bed bed = getBed(roomId, bedNum);
+        Bed bed = roomService.getBed(roomId, bedNum);
         
         if (admissionRepository.existsByBedAndDischargeDateIsNull(bed)) {
             throw new IllegalStateException("Bed is already occupied.");
@@ -56,7 +55,7 @@ public class AdmissionService {
     // Allocate / Transfer Room
     public Admission allocateRoom(Long admissionId, Long newRoomId, Long newBedNum) {
         Admission admission = getById(admissionId);
-        Bed newBed = getBed(newRoomId, newBedNum);
+        Bed newBed = roomService.getBed(newRoomId, newBedNum);
         
         if (admissionRepository.existsByBedAndDischargeDateIsNull(newBed)) {
             throw new IllegalStateException("Bed is already occupied.");
@@ -91,20 +90,6 @@ public class AdmissionService {
     public List<Admission> getAdmissionsForPatient(Long patientId) {
         Patient patient = patientService.getById(patientId);
         return admissionRepository.findByAppointment_Patient(patient);
-    }
-    
-    // Track Availability
-    public List<Bed> getAvailableBeds() {
-        return bedRepository.findAvailableBeds();
-    }
-    
-    // --- Helper ---
-    
-    // Get Bed
-    private Bed getBed(Long roomId, Long bedNum) {
-        RoomAssignmentId bedId = new RoomAssignmentId(roomId, bedNum);
-        return bedRepository.findById(bedId)
-                       .orElseThrow(() -> new ResourceNotFoundException("Error: Bed Not Found: Room " + roomId + ", Bed " + bedNum));
     }
     
     // Get Admissions for Appointment
